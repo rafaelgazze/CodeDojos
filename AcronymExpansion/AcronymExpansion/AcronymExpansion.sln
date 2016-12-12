@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TddOneOhOne", "TddOneOhOne\TddOneOhOne.csproj", "{03B1FFC1-B9FD-43B1-AD6C-A25C24A925BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcronymExpansion", "AcronymExpansion\AcronymExpansion.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{03B1FFC1-B9FD-43B1-AD6C-A25C24A925BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{03B1FFC1-B9FD-43B1-AD6C-A25C24A925BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{03B1FFC1-B9FD-43B1-AD6C-A25C24A925BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{03B1FFC1-B9FD-43B1-AD6C-A25C24A925BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
