@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using NUnit.Framework.Interfaces;
 
@@ -43,8 +44,8 @@ namespace AcronymExpansion
         public void AcroynmExpansionTest_Translate_PharseFull_HaveAbreviation()
         {
             AcroynmExpansion parse = new AcroynmExpansion();
-            string result = parse.TranslatePhrase("gg hf teste 1");
-            Assert.That("good game have fun teste 1", Is.EqualTo(result));
+            string result = parse.TranslatePhrase("imo that was wp. Anyway I've g2g. Yes abc.");
+            Assert.That("in my opinion that was well played. Anyway I've got to go. Yes abc.", Is.EqualTo(result));
         }
 
         [Test]
@@ -88,8 +89,9 @@ namespace AcronymExpansion
             var result = "";
             foreach (var word in words)
             {
-                var completeWord = _abreviation.FirstOrDefault(t => t.Key == word).Value;
-                result += string.IsNullOrEmpty(completeWord) ? word + " " : completeWord + " ";
+                var completeWord = _abreviation.FirstOrDefault(t => t.Key == Regex.Replace(word, @"[^a-zA-Z0-9]+$", String.Empty)).Value;
+                var nonAlphanumerics = Regex.Replace(word, @"[a-zA-Z\d\s:\u00C0-\u00FF]", string.Empty);
+                result += string.IsNullOrEmpty(completeWord) ? word + " " : completeWord + nonAlphanumerics + " ";
             }
 
             return result.Trim();
