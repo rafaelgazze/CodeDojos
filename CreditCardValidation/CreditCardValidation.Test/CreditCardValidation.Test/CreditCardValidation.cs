@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -54,21 +55,24 @@ namespace CreditCardValidation.Test
         }
     }
 
+
+
     public class ValidateCardType
     {
-        private readonly Dictionary<CardType, Regex> Cards = new Dictionary<CardType, Regex>
+        private readonly Dictionary<CardType, Regex> _cardsTypes = new Dictionary<CardType, Regex>
         {
             {CardType.Visa, new Regex("^4[0-9]{12}(?:[0-9]{3})?$")},
             {CardType.MasterCard, new Regex("^5[1-5][0-9]{14}$")},
             {CardType.Amex, new Regex("^3[47][0-9]{13}$")},
             {CardType.Discover, new Regex("^6011[0-9]{12}$")}
+            
         };
 
         public CardType DiscoverCardType(string cardNumber)
         {
             var validateCardType = new ValidateCardType();
 
-            foreach (var card in validateCardType.Cards)
+            foreach (var card in validateCardType._cardsTypes)
             {
                 if (card.Value.Match(cardNumber).Success)
                 {
@@ -83,7 +87,7 @@ namespace CreditCardValidation.Test
 
     public class CreditCard
     {
-        public string CardNumber { get; set; }
+        private string CardNumber { get; set; }
         public CardType Type { get; private set; }
 
         public CreditCard(string cardNumber)
